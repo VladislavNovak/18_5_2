@@ -4,7 +4,7 @@ using std::cout;
 using std::endl;
 
 int getJumpsNumber(int stairRung, int jumpsNumber = 0) {
-    if (stairRung <= 1) return 1;
+    if (stairRung == 0) return 1;
 
     while (stairRung) {
         jumpsNumber += getJumpsNumber(--stairRung);
@@ -16,5 +16,6 @@ int getJumpsNumber(int stairRung, int jumpsNumber = 0) {
 int main() {
     const unsigned int stairRung = 3;
 
-    cout << "jumps number: " << getJumpsNumber(stairRung) << endl;
+    int result = getJumpsNumber(stairRung);
+    cout << "jumps number: " << result << endl;
 }
